@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- title and favicon -->
+    <title>Shell Game</title>
+    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+
+    <!-- js -->
+    <script type="module" src="app.js"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
+    <!-- css -->
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/shell-game.css" />
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="assets/shell.png">
+        <h1>Shell Game</h1>
+    </header>
+
+    <main>
+        <section id="scoreboard">
+            <h2>Scoreboard</h2>
+            <ul class="scores">
+                <li>
+                    wins: <span id="wins-display">0</span>
+                </li>
+                <li>
+                    losses: <span id="losses-display">0</span>
+                </li>
+                <li>
+                    total: <span id="total-display">0</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="shells">
+            <h2>Shells</h2>
+            <ul class="shells triplet">
+                <li>
+                    <div id="pearl-1" class="pearl"></div>
+                    <img id="shell-1" class="reveal" src="assets/shell.png" alt="shell 1">
+                </li>
+                <li>
+                    <div id="pearl-2" class="pearl hidden"></div>
+                    <img id="shell-2" src="assets/shell.png" alt="shell 2">
+                </li>
+                <li>
+                    <div id="pearl-3" class="pearl hidden"></div>
+                    <img id="shell-3" src="assets/shell.png" alt="shell 3">
+                </li>
+            </ul>
+
+            <div id="guesses" class="triplet">
+                <button id="guess-1">Guess</button>
+                <button id="guess-2">Guess</button>
+                <button id="guess-3">Guess</button>
+            </div>
+
+            <section id="results">
+                <div class="triplet">
+                    <p id="display-1">Not here!</p>
+                    <p id="display-2"></p>
+                    <p id="display-3">Found it!</p>
+                </div>
+
+                <button id="play-again-button">Play Again</button>
+            </section>
+
+        </section>
+    </main>
+</body>
+
+</html>

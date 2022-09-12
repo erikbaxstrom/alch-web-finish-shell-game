@@ -1,0 +1,74 @@
+.logo {
+    height: 60px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.triplet {
+    margin: 20px 0;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 200px);
+    gap: 10px;
+}
+
+.shells li {
+    height: 250px;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+}
+
+.shells li > * {
+    grid-area: 1/1;
+}
+
+.shells img {
+    width: 100%;
+    transition: all 300ms ease-out;
+}
+
+.shells img.reveal {
+    transform: translateY(-75px);
+}
+
+.pearl {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);
+    box-shadow: 3px 10px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+button {
+    padding: 10px 20px;
+    background: var(--accent-color);
+    border: 1px solid var(--accent-color-dark);
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Titillium Web', san-serif;
+}
+
+.results p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
