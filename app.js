@@ -11,21 +11,28 @@ function loadPage() {
     displayShells();
 }
 
+function makeGuess(userGuess) {
+    console.log(userGuess);
+}
+
 /* Components */
 
 /* Component */
 // get DOM
-let guessButtons = document.getElementById('guesses');
-let shellOne = document.getElementById('shell-1');
-let shellTwo = document.getElementById('shell-2');
-let shellThree = document.getElementById('shell-3');
-let pearlOne = document.getElementById('pearl-1');
-let pearlTwo = document.getElementById('pearl-2');
-let pearlThree = document.getElementById('pearl-3');
-let displayOne = document.getElementById('display-1');
-let displayTwo = document.getElementById('display-2');
-let displayThree = document.getElementById('display-3');
-let playAgainButton = document.getElementById('play-again-button');
+const guessButtons = document.getElementById('guesses');
+const shellOne = document.getElementById('shell-1');
+const shellTwo = document.getElementById('shell-2');
+const shellThree = document.getElementById('shell-3');
+const pearlOne = document.getElementById('pearl-1');
+const pearlTwo = document.getElementById('pearl-2');
+const pearlThree = document.getElementById('pearl-3');
+const displayOne = document.getElementById('display-1');
+const displayTwo = document.getElementById('display-2');
+const displayThree = document.getElementById('display-3');
+const playAgainButton = document.getElementById('play-again-button');
+const buttonOne = document.getElementById('guess-1');
+const buttonTwo = document.getElementById('guess-2');
+const buttonThree = document.getElementById('guess-3');
 
 // display
 function displayShells() {
@@ -97,6 +104,14 @@ function displayShells() {
     }
 }
 // event listeners
-
+buttonOne.addEventListener('click', () => {
+    makeGuess('left');
+});
+buttonTwo.addEventListener('click', () => {
+    makeGuess('middle');
+});
+buttonThree.addEventListener('click', () => {
+    makeGuess('right');
+});
 /* Run page load code */
 loadPage();
