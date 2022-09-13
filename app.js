@@ -1,4 +1,5 @@
 /* Imports */
+import { getRandomItem } from './utils.js';
 // import { getRandomItem } from './utils.js';
 
 /* State */
@@ -6,13 +7,25 @@ let gameState = 'guess';
 let userGuess = '';
 let pearlLocation = '';
 
+const probabilityArray = ['left', 'middle', 'right'];
+
 /* Actions */
 function loadPage() {
     displayShells();
 }
 
-function makeGuess(userGuess) {
-    console.log(userGuess);
+function makeGuess(guess) {
+    // game logic
+    pearlLocation = getRandomItem(probabilityArray);
+    if (guess === pearlLocation) {
+        gameState = 'win';
+    } else {
+        gameState = 'lose';
+    }
+    userGuess = guess;
+    displayShells();
+
+    // call displayShells
 }
 
 /* Components */
@@ -97,7 +110,7 @@ function displayShells() {
                     break;
                 case 'right':
                     pearlThree.classList.remove('hidden');
-                    displayThree.textContent = 'Not Here!';
+                    shellThree.classList.add('reveal');
                     break;
             }
             break;
