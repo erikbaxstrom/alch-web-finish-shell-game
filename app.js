@@ -6,11 +6,14 @@ import { getRandomItem } from './utils.js';
 let gameState = 'guess';
 let userGuess = '';
 let pearlLocation = '';
+let wins = 0;
+let losses = 0;
 
 const probabilityArray = ['left', 'middle', 'right'];
 
 /* Actions */
 function loadPage() {
+    displayScoreboard();
     displayShells();
 }
 
@@ -142,6 +145,20 @@ function playAgain() {
 playAgainButton.addEventListener('click', () => {
     playAgain();
 });
+
+/* Component Play Again*/
+// get DOM
+const winsDisplay = document.getElementById('wins-display');
+const lossesDisplay = document.getElementById('losses-display');
+const totalDisplay = document.getElementById('total-display');
+
+// display
+function displayScoreboard() {
+    winsDisplay.textContent = wins;
+    lossesDisplay.textContent = losses;
+    totalDisplay.textContent = wins + losses;
+}
+// event listeners
 
 /* Run page load code */
 loadPage();
