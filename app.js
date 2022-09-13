@@ -21,11 +21,14 @@ function makeGuess(guess) {
     pearlLocation = getRandomItem(probabilityArray);
     if (guess === pearlLocation) {
         gameState = 'win';
+        wins++;
     } else {
         gameState = 'lose';
+        losses++;
     }
     userGuess = guess;
     displayShells();
+    displayScoreboard();
 }
 
 /* Components */
