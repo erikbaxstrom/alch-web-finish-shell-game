@@ -15,7 +15,6 @@ function loadPage() {
 }
 
 function makeGuess(guess) {
-    // game logic
     pearlLocation = getRandomItem(probabilityArray);
     if (guess === pearlLocation) {
         gameState = 'win';
@@ -24,13 +23,11 @@ function makeGuess(guess) {
     }
     userGuess = guess;
     displayShells();
-
-    // call displayShells
 }
 
 /* Components */
 
-/* Component */
+/* Component Display Shells*/
 // get DOM
 const guessButtons = document.getElementById('guesses');
 const shellOne = document.getElementById('shell-1');
@@ -65,6 +62,7 @@ function displayShells() {
             break;
         case 'win':
             guessButtons.classList.add('hidden');
+            playAgainButton.classList.remove('hidden');
             switch (userGuess) {
                 case 'left':
                     shellOne.classList.add('reveal');
@@ -85,6 +83,7 @@ function displayShells() {
             break;
         case 'lose':
             guessButtons.classList.add('hidden');
+            playAgainButton.classList.remove('hidden');
             switch (userGuess) {
                 case 'left':
                     shellOne.classList.add('reveal');
@@ -126,5 +125,24 @@ buttonTwo.addEventListener('click', () => {
 buttonThree.addEventListener('click', () => {
     makeGuess('right');
 });
+
+/* Component Play Again*/
+// get DOM
+// already got playAgainButton element above
+
+// display
+function playAgain() {
+    // let gameState = 'guess';
+    // let userGuess = '';
+    // let pearlLocation = '';
+    // displayShells();
+    console.log('play again');
+}
+
+// event listeners
+playAgainButton.addEventListener('click', () => {
+    playAgain();
+});
+
 /* Run page load code */
 loadPage();
