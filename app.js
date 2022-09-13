@@ -132,11 +132,10 @@ buttonThree.addEventListener('click', () => {
 
 // display
 function playAgain() {
-    // let gameState = 'guess';
-    // let userGuess = '';
-    // let pearlLocation = '';
-    // displayShells();
-    console.log('play again');
+    gameState = 'guess';
+    userGuess = '';
+    pearlLocation = '';
+    displayShells();
 }
 
 // event listeners
